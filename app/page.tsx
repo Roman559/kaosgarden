@@ -1,138 +1,208 @@
-export default function Home() {
-  return (
-    <div className="min-h-screen bg-black text-white font-sans">
-      {/* Hero */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center">
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 via-black to-black opacity-95" />
+"use client";
 
-        <div className="relative z-10 max-w-4xl">
-          <h1 className="mb-6 text-6xl font-extrabold tracking-[0.3em] md:text-8xl">
+import { useEffect, useState } from "react";
+
+export default function Home() {
+    const images = [
+    "/images/1000007919.jpg",
+    "/images/1000007920.jpg",
+    "/images/1000007921.jpg",
+    "/images/1000007922.jpg",
+  ];
+
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+  return (
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      {/* HERO */}
+      <section
+       className="relative flex min-h-screen items-center justify-center bg-cover bg-center transition-all duration-1000"
+        style={{
+  backgroundImage: `url(${images[currentImage]})`,
+}}
+      >
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
+
+        <div className="relative z-10 px-6 text-center">
+          <h1 className="mb-6 text-6xl font-black tracking-[0.4em] md:text-8xl">
             KAOS GARDEN
           </h1>
 
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-zinc-300 md:text-xl">
-            Canadian alternative metal band working on our first album.
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-zinc-300 md:text-2xl">
+            Canadian nu metal band forging heavy riffs,
+            dark atmosphere, and raw emotion.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <a
               href="#music"
-              className="rounded-2xl border border-white px-6 py-3 text-lg transition hover:bg-white hover:text-black"
+              className="rounded-2xl border border-white px-8 py-4 text-lg transition hover:bg-white hover:text-black"
             >
-              Listen Soon
+              Upcoming Music
             </a>
 
             <a
               href="https://instagram.com/kaosgardenmusic"
               target="_blank"
               rel="noreferrer"
-              className="rounded-2xl bg-white px-6 py-3 text-lg font-semibold text-black transition hover:scale-105"
+             className="rounded-2xl border border-white px-8 py-4 text-lg font-bold text-white transition hover:bg-white hover:text-black"
             >
               Instagram
             </a>
+            <a
+  href="https://www.tiktok.com/@kaosgardenmusic?_r=1&_t=ZS-96L0Hi3Vwby"
+  target="_blank"
+  rel="noreferrer"
+  className="rounded-2xl border border-white px-8 py-4 text-lg transition hover:bg-white hover:text-black"
+>
+  TikTok
+</a>
+
+<a
+  href="https://www.youtube.com/channel/UC0qP5mBznr2W0iD5n0-by9A"
+  target="_blank"
+  rel="noreferrer"
+  className="rounded-2xl border border-white px-8 py-4 text-lg transition hover:bg-white hover:text-black"
+>
+  YouTube
+</a>
           </div>
         </div>
       </section>
 
-      {/* About */}
-      <section className="grid gap-10 px-6 py-24 md:grid-cols-2 md:px-16">
-        <div>
-          <h2 className="mb-6 text-4xl font-bold">About Us</h2>
+      {/* ABOUT */}
+      <section className="px-6 py-24 md:px-20">
+        <div className="mx-auto max-w-5xl rounded-3xl border border-zinc-800 bg-zinc-950/70 p-10 shadow-2xl backdrop-blur">
+          <h2 className="mb-8 text-5xl font-bold">
+            About The Band
+          </h2>
 
-          <p className="text-lg leading-8 text-zinc-300">
-            Kaos Garden is a Canadian band blending heavy riffs,
-            atmospheric melodies, and raw energy. We are currently
-            recording our debut album and preparing new singles for release.
+          <p className="text-lg leading-9 text-zinc-300">
+            Kaos Garden is a Canadian nu metal band.
+
+Not just making music — turning kaos, pain, and passion into sound.
+
+Kaos Garden combines heavy riffs, raw emotion, and aggressive energy
+into songs built to hit harder every time.
           </p>
-        </div>
-
-        <div className="rounded-3xl border border-zinc-800 bg-zinc-950 p-8 shadow-2xl">
-          <h3 className="mb-4 text-2xl font-semibold">
-            Current Status
-          </h3>
-
-          <ul className="space-y-3 text-zinc-300">
-            <li>• First album in production</li>
-            <li>• New singles coming soon</li>
-            <li>• Building our live set</li>
-            <li>• Follow us for updates</li>
-          </ul>
         </div>
       </section>
 
-      {/* Music */}
+      {/* MEMBERS */}
+<section className="bg-zinc-950 px-6 py-24 md:px-20">
+  <h2 className="mb-14 text-center text-5xl font-bold">
+    Members
+  </h2>
+
+  <div className="grid gap-8 md:grid-cols-5">
+    <div className="rounded-3xl border border-zinc-800 bg-black p-8 text-center transition hover:-translate-y-2 hover:border-white">
+      <div className="mx-auto mb-6 h-40 w-40 rounded-full bg-zinc-800" />
+
+      <h3 className="mb-2 text-2xl font-bold">
+        Roman Ryzhkov
+      </h3>
+
+      <p className="text-zinc-400">
+        Bass
+      </p>
+    </div>
+
+    <div className="rounded-3xl border border-zinc-800 bg-black p-8 text-center transition hover:-translate-y-2 hover:border-white">
+      <div className="mx-auto mb-6 h-40 w-40 rounded-full bg-zinc-800" />
+
+      <h3 className="mb-2 text-2xl font-bold">
+        William Fink
+      </h3>
+
+      <p className="text-zinc-400">
+        Drums
+      </p>
+    </div>
+
+    <div className="rounded-3xl border border-zinc-800 bg-black p-8 text-center transition hover:-translate-y-2 hover:border-white">
+      <div className="mx-auto mb-6 h-40 w-40 rounded-full bg-zinc-800" />
+
+      <h3 className="mb-2 text-2xl font-bold">
+        Esteban Berger
+      </h3>
+
+      <p className="text-zinc-400">
+        Lead Guitar
+      </p>
+    </div>
+
+    <div className="rounded-3xl border border-zinc-800 bg-black p-8 text-center transition hover:-translate-y-2 hover:border-white">
+      <div className="mx-auto mb-6 h-40 w-40 rounded-full bg-zinc-800" />
+
+      <h3 className="mb-2 text-2xl font-bold">
+        Thomas Morin
+      </h3>
+
+      <p className="text-zinc-400">
+        Rhythm Guitar
+      </p>
+    </div>
+
+    <div className="rounded-3xl border border-zinc-800 bg-black p-8 text-center transition hover:-translate-y-2 hover:border-white">
+      <div className="mx-auto mb-6 h-40 w-40 rounded-full bg-zinc-800" />
+
+      <h3 className="mb-2 text-2xl font-bold">
+        Charles-Antoine Tremblay
+      </h3>
+
+      <p className="text-zinc-400">
+        Lead Vocalist
+      </p>
+    </div>
+  </div>
+</section>
+
+      {/* MUSIC */}
       <section
         id="music"
-        className="bg-zinc-950 px-6 py-24 md:px-16"
+        className="px-6 py-24 md:px-20"
       >
-        <h2 className="mb-12 text-center text-4xl font-bold">
+        <h2 className="mb-14 text-center text-5xl font-bold">
           Upcoming Releases
         </h2>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          <div className="rounded-3xl border border-zinc-800 bg-black p-6 transition hover:-translate-y-1 hover:border-white">
-            <div className="mb-4 h-52 rounded-2xl bg-zinc-900" />
-
-            <h3 className="mb-2 text-2xl font-semibold">
+        <div className="grid gap-8 md:grid-cols-2">
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-950 p-8 shadow-2xl">
+            <h3 className="mb-4 text-4xl font-bold">
               Risin&apos; Up
             </h3>
 
-            <p className="text-zinc-400">
+            <p className="mb-6 text-zinc-400">
               First single from the upcoming debut album.
             </p>
+
+            <div className="h-56 rounded-2xl bg-zinc-900" />
           </div>
 
-          <div className="rounded-3xl border border-zinc-800 bg-black p-6 transition hover:-translate-y-1 hover:border-white">
-            <div className="mb-4 h-52 rounded-2xl bg-zinc-900" />
-
-            <h3 className="mb-2 text-2xl font-semibold">
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-950 p-8 shadow-2xl">
+            <h3 className="mb-4 text-4xl font-bold">
               Debut Album
             </h3>
 
-            <p className="text-zinc-400">
-              Heavy sound, emotional atmosphere, and aggressive energy.
+            <p className="mb-6 text-zinc-400">
+              Heavy riffs, dark atmosphere, and cinematic energy.
             </p>
-          </div>
 
-          <div className="rounded-3xl border border-zinc-800 bg-black p-6 transition hover:-translate-y-1 hover:border-white">
-            <div className="mb-4 h-52 rounded-2xl bg-zinc-900" />
-
-            <h3 className="mb-2 text-2xl font-semibold">
-              Live Shows
-            </h3>
-
-            <p className="text-zinc-400">
-              Concert announcements and future performances
-              will appear here.
-            </p>
+            <div className="h-56 rounded-2xl bg-zinc-900" />
           </div>
         </div>
       </section>
 
-      {/* Contact */}
-      <section className="px-6 py-24 text-center md:px-16">
-        <h2 className="mb-6 text-4xl font-bold">
-          Stay Connected
-        </h2>
-
-        <p className="mx-auto mb-8 max-w-2xl text-lg text-zinc-300">
-          Follow Kaos Garden on social media and be the first
-          to hear new music, updates, and behind-the-scenes content.
-        </p>
-
-        <a
-          href="https://instagram.com/kaosgardenmusic"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-block rounded-2xl bg-white px-8 py-4 text-lg font-bold text-black transition hover:scale-105"
-        >
-          @kaosgardenmusic
-        </a>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-zinc-900 px-6 py-8 text-center text-zinc-500">
-        © 2026 Kaos Garden. All rights reserved.
+      {/* FOOTER */}
+      <footer className="border-t border-zinc-900 px-6 py-10 text-center text-zinc-500">
+        © 2026 Kaos Garden — All Rights Reserved
       </footer>
     </div>
   );
