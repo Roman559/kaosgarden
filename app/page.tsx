@@ -243,7 +243,7 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
             <div className="relative group">
 
               <img
-                src="/images/1000007936.jpg"
+                src="/images/IMG_20260518_001000_019.jpg"
                 alt="Risin Up"
                 className="rounded-2xl border border-zinc-800"
               />
