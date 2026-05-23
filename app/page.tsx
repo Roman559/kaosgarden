@@ -219,55 +219,81 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
       </div>
 
       {/* MUSIC */}
-      <section
-        id="music"
-        className="px-6 py-24 md:px-20"
-      >
+<section
+  id="music"
+  className="px-6 py-24 md:px-20"
+>
 
-        <h2 className="mb-14 text-center text-5xl font-bold">
-          Latest Release
-        </h2>
+  <h2 className="mb-14 text-center text-5xl font-bold">
+    Latest Releases
+  </h2>
 
-        <div className="flex justify-center">
+  <div className="grid gap-8 md:grid-cols-2">
 
-          <div className="w-full max-w-2xl rounded-3xl border border-zinc-800 bg-zinc-950 p-8">
+    {/* RISIN UP */}
+    <div className="rounded-3xl border border-zinc-800 bg-zinc-950 p-8">
 
-            <h3 className="mb-4 text-5xl font-black">
-              Risin&apos; Up
-            </h3>
+      <h3 className="mb-4 text-5xl font-black">
+        Risin&apos; Up
+      </h3>
 
-            <p className="mb-8 text-lg text-zinc-400">
-              OUT NOW
-            </p>
+      <p className="mb-8 text-lg text-zinc-400">
+        OUT NOW
+      </p>
 
-            <div className="relative group">
+      <div className="relative group">
 
-              <img
-                src="/images/IMG_20260518_001000_019.jpg"
-                alt="Risin Up"
-                className="rounded-2xl border border-zinc-800"
-              />
+        <img
+          src="/images/IMG_20260518_001000_019.jpg"
+          alt="Risin Up"
+          className="rounded-2xl border border-zinc-800"
+        />
 
-              <a
-                href="https://open.spotify.com/track/3P5nDTcbihXuKCyySjTa3T?si=b2e4b1d13fb6423d"
-                target="_blank"
-                rel="noreferrer"
-                className="absolute inset-0 flex items-center justify-center rounded-2xl bg-black/40 opacity-0 transition duration-300 group-hover:opacity-100"
-              >
+        <a
+          href="https://open.spotify.com/track/3P5nDTcbihXuKCyySjTa3T?si=b2e4b1d13fb6423d"
+          target="_blank"
+          rel="noreferrer"
+          className="absolute inset-0 flex items-center justify-center rounded-2xl bg-black/40 opacity-0 transition duration-300 group-hover:opacity-100"
+        >
 
-                <div className="flex h-24 w-24 items-center justify-center rounded-full border border-white bg-black/70 text-4xl">
-                  ▶
-                </div>
-
-              </a>
-
-            </div>
-
+          <div className="flex h-24 w-24 items-center justify-center rounded-full border border-white bg-black/70 text-4xl">
+            ▶
           </div>
 
-        </div>
+        </a>
 
-      </section>
+      </div>
+
+    </div>
+
+    {/* CONFIDENCE */}
+    <div className="rounded-3xl border border-zinc-800 bg-zinc-950 p-8">
+
+      <h3 className="mb-4 text-4xl font-black leading-tight">
+        Confidence (Is Killing Me)
+      </h3>
+
+      <p className="mb-8 text-lg text-zinc-400">
+        IN DEVELOPMENT
+      </p>
+
+      <div className="relative">
+
+        <img
+          src="/images/IMG_4383.webp"
+          alt="Confidence Is Killing Me"
+          className="rounded-2xl border border-zinc-800"
+        />
+
+        <div className="absolute inset-0 rounded-2xl bg-black/20" />
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
       {/* ROSES */}
       <div className="relative h-[320px] overflow-hidden bg-black">
