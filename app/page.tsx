@@ -4,15 +4,15 @@ import { useEffect, useState } from "react";
 
 export default function KaosGardenWebsite() {
   const images = [
-    "/images/1000007919.jpg",
-    "/images/1000007920.jpg",
-    "/images/1000007921.jpg",
-    "/images/1000007922.jpg",
+    "/images/1000007919.webp",
+    "/images/1000007920.webp",
+    "/images/1000007921.webp",
+    "/images/1000007922.webp",
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
   const [showForm, setShowForm] = useState(false);
-
+const [showCookies, setShowCookies] = useState(true);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
@@ -22,7 +22,43 @@ export default function KaosGardenWebsite() {
   }, []);
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-black text-white">
+  <div className="min-h-screen overflow-x-hidden bg-black text-white">
+
+    {/* COOKIE BANNER */}
+{showCookies && (
+
+  <div className="fixed bottom-6 right-6 z-50 w-[380px] rounded-3xl border border-zinc-800 bg-black/60 p-6 backdrop-blur-xl shadow-2xl">
+
+    <h3 className="mb-3 text-2xl font-black">
+      Cookie Settings
+    </h3>
+
+    <p className="mb-5 text-zinc-400 leading-7">
+      Kaos Garden uses cookies to improve site performance,
+      analytics, and your experience.
+    </p>
+
+    <div className="flex gap-4">
+
+      <button
+        onClick={() => setShowCookies(false)}
+        className="rounded-2xl border border-white px-6 py-3 font-bold transition hover:bg-white hover:text-black"
+      >
+        Accept
+      </button>
+
+      <button
+        onClick={() => setShowCookies(false)}
+        className="rounded-2xl border border-zinc-700 px-6 py-3 transition hover:border-white"
+      >
+        Decline
+      </button>
+
+    </div>
+
+  </div>
+
+)}
 
     {/* HERO */}
       <section
@@ -35,7 +71,7 @@ export default function KaosGardenWebsite() {
 
         <div className="relative z-10 px-6 text-center">
           <img
-  src="/images/1000007960-removebg-preview.png"
+  src="/images/1000007960-removebg-preview.webp"
   alt="Kaos Garden"
   className="mx-auto mb-8 w-[650px] max-w-full select-none"
 />
@@ -87,7 +123,7 @@ export default function KaosGardenWebsite() {
       <div className="relative h-[220px] overflow-hidden bg-black">
 
         <img
-          src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.png"
+          src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.webp"
           className="absolute object-contain"
           style={{
             left: "-120px",
@@ -97,7 +133,7 @@ export default function KaosGardenWebsite() {
         />
 
         <img
-          src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.png"
+          src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.webp"
           className="absolute object-contain"
           style={{
             left: "34%",
@@ -107,7 +143,7 @@ export default function KaosGardenWebsite() {
         />
 
         <img
-          src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.png"
+          src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.webp"
           className="absolute object-contain"
           style={{
             right: "-40px",
@@ -197,7 +233,7 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
       <div className="relative h-[260px] overflow-hidden bg-black">
 
         <img
-          src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.png"
+          src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.webp"
           className="absolute object-contain"
           style={{
             left: "-120px",
@@ -207,7 +243,7 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
         />
 
         <img
-          src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.png"
+          src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.webp"
           className="absolute object-contain"
           style={{
             right: "-50px",
@@ -299,7 +335,7 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
       <div className="relative h-[320px] overflow-hidden bg-black">
 
         <img
-          src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.png"
+          src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.webp"
           className="absolute object-contain"
           style={{
             left: "-120px",
@@ -309,7 +345,7 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
         />
 
         <img
-          src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.png"
+          src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.webp"
           className="absolute object-contain"
           style={{
             right: "-60px",
@@ -362,11 +398,10 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
   </div>
 
   <button
-    onClick={() => setShowForm(true)}
-    className="rounded-2xl border border-white px-8 py-4 text-lg font-bold transition hover:bg-white hover:text-black"
-  >
-    Buy Now
-  </button>
+  className="rounded-2xl border border-zinc-700 px-8 py-4 text-lg font-bold text-zinc-400 cursor-default"
+>
+  Coming Soon
+</button>
 
 </div>
 
@@ -387,78 +422,6 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
 
         </div>
       </section>
-
-      {/* ORDER FORM */}
-      {showForm && (
-
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6">
-
-          <div className="w-full max-w-xl rounded-3xl border border-zinc-800 bg-zinc-950 p-8">
-
-            <div className="mb-8 flex items-center justify-between">
-
-              <h2 className="text-4xl font-black">
-                Hoodie Order
-              </h2>
-
-              <button
-                onClick={() => setShowForm(false)}
-                className="text-3xl text-zinc-400 hover:text-white"
-              >
-                ×
-              </button>
-
-            </div>
-
-            <form className="space-y-6">
-
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="w-full rounded-2xl border border-zinc-800 bg-black p-4 outline-none"
-              />
-
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full rounded-2xl border border-zinc-800 bg-black p-4 outline-none"
-              />
-
-              <input
-                type="text"
-                placeholder="Shipping Address"
-                className="w-full rounded-2xl border border-zinc-800 bg-black p-4 outline-none"
-              />
-
-              <select className="w-full rounded-2xl border border-zinc-800 bg-black p-4 outline-none">
-                <option>Select Size</option>
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-              </select>
-
-              <select className="w-full rounded-2xl border border-zinc-800 bg-black p-4 outline-none">
-                <option>Payment Method</option>
-                <option>PayPal</option>
-                <option>Credit Card</option>
-                <option>Interac e-Transfer</option>
-              </select>
-
-              <button
-                type="submit"
-                className="w-full rounded-2xl border border-white px-8 py-4 text-lg font-bold transition hover:bg-white hover:text-black"
-              >
-                Submit Order
-              </button>
-
-            </form>
-
-          </div>
-
-        </div>
-
-      )}
 
       {/* FOOTER */}
       <footer className="border-t border-zinc-900 px-6 py-10 text-center text-zinc-500">
