@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function KaosGardenWebsite() {
@@ -11,7 +11,6 @@ export default function KaosGardenWebsite() {
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
-  const [showForm, setShowForm] = useState(false);
 const [showCookies, setShowCookies] = useState(true);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -70,10 +69,13 @@ const [showCookies, setShowCookies] = useState(true);
         <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
 
         <div className="relative z-10 px-6 text-center">
-          <img
+         <Image
   src="/images/1000007960-removebg-preview.webp"
-  alt="Kaos Garden"
-  className="mx-auto mb-8 w-[650px] max-w-full select-none"
+  alt="Kaos Garden logo"
+  width={650}
+  height={300}
+  priority
+  className="mx-auto mb-8 max-w-full select-none"
 />
 
           <p className="mx-auto mb-8 max-w-2xl text-lg text-zinc-300 md:text-2xl">
@@ -124,8 +126,11 @@ const [showCookies, setShowCookies] = useState(true);
 
         <img
           src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.webp"
+          alt="Rose decoration"
           className="absolute object-contain"
           style={{
+            width: "420px",
+            height: "420px",
             left: "-120px",
             top: "-70px",
             transform: "rotate(-12deg)",
@@ -134,8 +139,11 @@ const [showCookies, setShowCookies] = useState(true);
 
         <img
           src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.webp"
+          alt="Rose decoration"
           className="absolute object-contain"
           style={{
+            width: "420px",
+            height: "420px",
             left: "34%",
             top: "-130px",
             transform: "rotate(10deg)",
@@ -144,8 +152,11 @@ const [showCookies, setShowCookies] = useState(true);
 
         <img
           src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.webp"
+          alt="Rose decoration"
           className="absolute object-contain"
           style={{
+            width: "420px",
+            height: "420px",
             right: "-40px",
             top: "-60px",
             transform: "rotate(-12deg)",
@@ -234,8 +245,11 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
 
         <img
           src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.webp"
+          alt="Rose decoration"
           className="absolute object-contain"
           style={{
+            width: "420px",
+            height: "420px",
             left: "-120px",
             top: "-80px",
             transform: "rotate(12deg)",
@@ -244,9 +258,12 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
 
         <img
           src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.webp"
+          alt="Rose decoration"
           className="absolute object-contain"
           style={{
-            right: "-50px",
+            width: "420px",
+            height: "420px",
+            right: "-40px",
             bottom: "-80px",
             transform: "rotate(-18deg)",
           }}
@@ -279,11 +296,13 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
 
       <div className="relative group">
 
-        <img
-          src="/images/IMG_20260518_001000_019.jpg"
-          alt="Risin Up"
-          className="rounded-2xl border border-zinc-800"
-        />
+        <Image
+  src="/images/IMG_20260518_001000_019.jpg"
+  alt="Risin Up single cover"
+  width={900}
+  height={900}
+  className="rounded-2xl border border-zinc-800"
+/>
 
         <a
           href="https://open.spotify.com/track/3P5nDTcbihXuKCyySjTa3T?si=b2e4b1d13fb6423d"
@@ -315,11 +334,13 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
 
       <div className="relative">
 
-        <img
-          src="/images/IMG_4383.webp"
-          alt="Confidence Is Killing Me"
-          className="rounded-2xl border border-zinc-800"
-        />
+        <Image
+  src="/images/IMG_4383.webp"
+  alt="Confidence Is Killing Me artwork"
+  width={900}
+  height={900}
+  className="rounded-2xl border border-zinc-800"
+/>
 
         <div className="absolute inset-0 rounded-2xl bg-black/20" />
 
@@ -336,8 +357,11 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
 
         <img
           src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.webp"
+          alt="Rose decoration"
           className="absolute object-contain"
           style={{
+            width: "420px",
+            height: "420px",
             left: "-120px",
             top: "-60px",
             transform: "rotate(-18deg)",
@@ -346,9 +370,12 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
 
         <img
           src="/images/file_00000000f0c471fdaef93ef307fd5a31-removebg-preview.webp"
+          alt="Rose decoration"
           className="absolute object-contain"
           style={{
-            right: "-60px",
+            width: "420px",
+            height: "420px",
+            right: "-50px",
             bottom: "-50px",
             transform: "rotate(14deg)",
           }}
@@ -375,7 +402,8 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
   <div className="mb-8 flex justify-center">
 
     <video
-      autoPlay
+  preload="metadata"
+  autoPlay
       muted
       loop
       playsInline
