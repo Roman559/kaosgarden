@@ -1,5 +1,12 @@
 import "./globals.css";
+import type { Metadata } from "next";
 import Script from "next/script";
+
+export const metadata: Metadata = {
+  title: "Kaos Garden",
+  description:
+    "Official website of Kaos Garden — Canadian independent metal band.",
+};
 
 export default function RootLayout({
   children,
@@ -8,11 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-
       <body>
 
         <Script
-          async
           src="https://www.googletagmanager.com/gtag/js?id=G-MHZ3ENFCJZ"
           strategy="afterInteractive"
         />
@@ -22,7 +27,6 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
             gtag('config', 'G-MHZ3ENFCJZ');
           `}
         </Script>
@@ -30,7 +34,6 @@ export default function RootLayout({
         {children}
 
       </body>
-
     </html>
   );
 }
