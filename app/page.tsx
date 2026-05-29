@@ -63,13 +63,14 @@ const [showCookies, setShowCookies] = useState(true);
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
 
   <Image
-    src={images[currentImage]}
-    alt="Kaos Garden background"
-    fill
-    priority
-    quality={70}
-    className="object-cover"
-  />
+  src={images[currentImage]}
+  alt="Kaos Garden background"
+  fill
+  priority
+  fetchPriority="high"
+  quality={70}
+  className="object-cover"
+/>
 
   <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
 
@@ -135,9 +136,9 @@ const [showCookies, setShowCookies] = useState(true);
           className="absolute object-contain"
           style={{
             width: "420px",
-            height: "420px",
+            height: "280px",
             left: "-120px",
-            top: "-70px",
+            top: "-60px",
             transform: "rotate(-12deg)",
           }}
         />
@@ -148,9 +149,9 @@ const [showCookies, setShowCookies] = useState(true);
           className="absolute object-contain"
           style={{
             width: "420px",
-            height: "420px",
+            height: "280px",
             left: "34%",
-            top: "-130px",
+            top: "-90px",
             transform: "rotate(10deg)",
           }}
         />
@@ -161,7 +162,7 @@ const [showCookies, setShowCookies] = useState(true);
           className="absolute object-contain"
           style={{
             width: "420px",
-            height: "420px",
+            height: "280px",
             right: "-40px",
             top: "-60px",
             transform: "rotate(-12deg)",
@@ -254,7 +255,7 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
           className="absolute object-contain"
           style={{
             width: "420px",
-            height: "420px",
+            height: "280px",
             left: "-120px",
             top: "-80px",
             transform: "rotate(12deg)",
@@ -267,7 +268,7 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
           className="absolute object-contain"
           style={{
             width: "420px",
-            height: "420px",
+            height: "280px",
             right: "-40px",
             bottom: "-80px",
             transform: "rotate(-18deg)",
@@ -366,7 +367,7 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
           className="absolute object-contain"
           style={{
             width: "420px",
-            height: "420px",
+            height: "280px",
             left: "-120px",
             top: "-60px",
             transform: "rotate(-18deg)",
@@ -379,9 +380,9 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
           className="absolute object-contain"
           style={{
             width: "420px",
-            height: "420px",
+            height: "280px",
             right: "-50px",
-            bottom: "-50px",
+            bottom: "-40px",
             transform: "rotate(14deg)",
           }}
         />

@@ -29,12 +29,13 @@ export default function RootLayout({
 
         {/* GOOGLE ANALYTICS */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-MHZ3ENFCJZ"
-          strategy="afterInteractive"
-        />
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-MHZ3ENFCJZ"
+  strategy="lazyOnload"
+/>
 
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+<Script id="google-analytics" strategy="lazyOnload">
+          {`s
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
