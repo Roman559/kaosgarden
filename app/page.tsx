@@ -60,15 +60,20 @@ const [showCookies, setShowCookies] = useState(true);
 )}
 
     {/* HERO */}
-      <section
-        className="relative flex min-h-screen items-center justify-center bg-cover bg-center transition-all duration-1000"
-        style={{
-          backgroundImage: `url(${images[currentImage]})`,
-        }}
-      >
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
 
-        <div className="relative z-10 px-6 text-center">
+  <Image
+    src={images[currentImage]}
+    alt="Kaos Garden background"
+    fill
+    priority
+    quality={70}
+    className="object-cover"
+  />
+
+  <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
+
+  <div className="relative z-10 px-6 text-center">
          <Image
   src="/images/1000007960-removebg-preview.webp"
   alt="Kaos Garden logo"
@@ -458,7 +463,7 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-zinc-900 px-6 py-10 text-center text-zinc-300">
+      <footer className="border-t border-zinc-900 px-6 py-10 text-center text-zinc-400">
         © 2026 Kaos Garden — All Rights Reserved
       </footer>
 
