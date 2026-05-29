@@ -413,6 +413,12 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
         src="/videos/lv_0_20260518195006.mp4"
         type="video/mp4"
       />
+      <track
+  kind="captions"
+  src="/captions.vtt"
+  srcLang="en"
+  label="English captions"
+/>
     </video>
 
   </div>
@@ -452,7 +458,7 @@ Kaos Garden combines heavy riffs, raw emotion, and aggressive energy into songs 
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-zinc-900 px-6 py-10 text-center text-zinc-500">
+      <footer className="border-t border-zinc-900 px-6 py-10 text-center text-zinc-300">
         © 2026 Kaos Garden — All Rights Reserved
       </footer>
 
